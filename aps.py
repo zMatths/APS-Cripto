@@ -63,7 +63,6 @@ def login(users):
     usuario = input("Digite seu usuário: ")
     senha = input("Digite sua senha: ")
 
-    # Check if user exists
     for registered_user, registered_password in users:
         if usuario == registered_user and senha == registered_password:
             print("Login realizado com sucesso!")
@@ -84,7 +83,6 @@ def main():
         elif action.lower() == 'l':
             usuario, senha = login(users)
             if usuario and senha:
-                # Generate keys and encrypt/decrypt messages
                 p = generate_prime() 
                 q = generate_prime()  
                 n = p * q             
@@ -120,7 +118,6 @@ def main():
         else:
             print("Opção inválida! Tente novamente.")
 
-        # Ask if the user wants to continue
         continuar = input("Deseja continuar? (s/n): ")
         if continuar.lower() != 's':
             print('Vejo você depois!')
